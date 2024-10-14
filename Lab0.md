@@ -1,0 +1,5 @@
+# Lab 0
+
+# Biểu đồ lớp cơ bản
+
+![Diagram](https://www.planttext.com/api/plantuml/png/V96n2i8m48RtFCNHIOKEhaL4kmb515qSKnFqi4qWTnL4V3877ybNC5TKhA9B85_klloNt2xN2R4EtDILsbIQ2AODxto0am98mUdQPh3aW6xRWXBzsnvWQtaUQthzJvgZVuDdzR3dtkyVRaQkklBPCfztmD7gi6ZA2cbdJGRe-AbVIVFthMBufkke4IhzhoG5ba67uwz1jJ714dLKaKd-NXcNh1qbIWyUJNiQREqFza-1l4f4954A91x9RYo9dbcIOG9f2iaWQPips7Z76XqfDR7Eo2VT0G00__y30000)
