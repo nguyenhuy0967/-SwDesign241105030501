@@ -340,7 +340,7 @@ Lý do: Tự động hóa các quy trình như tính lương, tạo báo cáo, v
 
  +updateTimecard(timecard: Timecard): Cập nhật thông tin thẻ thời gian của nhân viên.
 
-* 2. Lớp PaymentMethod
+* 2.Lớp PaymentMethod
      
 -Mô tả: Lớp này quản lý các phương thức thanh toán khác nhau mà nhân viên có thể chọn.
 
@@ -354,7 +354,7 @@ Lý do: Tự động hóa các quy trình như tính lương, tạo báo cáo, v
 
  +processPayment(amount: double): Xử lý thanh toán cho một số tiền cụ thể.
 
-* 3. Lớp Timecard
+* 3.Lớp Timecard
 -Mô tả: Lớp này đại diện cho thẻ thời gian của nhân viên, chứa thông tin về thời gian làm việc của họ.
 
 -Thuộc tính:
@@ -371,7 +371,7 @@ Lý do: Tự động hóa các quy trình như tính lương, tạo báo cáo, v
 
  +validate(): Xác thực thông tin thẻ thời gian.
 
-* 4. Lớp Payroll
+* 4.Lớp Payroll
 -Mô tả: Lớp này quản lý quá trình tính toán và xử lý lương cho nhân viên.
 
 -Thuộc tính:
@@ -390,7 +390,7 @@ Lý do: Tự động hóa các quy trình như tính lương, tạo báo cáo, v
 
  +generatePayslip(): Tạo phiếu lương cho nhân viên.
 
-* 5. Lớp BankSystem
+* 5.Lớp BankSystem
 -Mô tả: Lớp này tương tác với hệ thống ngân hàng để xử lý các giao dịch tài chính.
 
 -Thuộc tính:
@@ -403,7 +403,7 @@ Lý do: Tự động hóa các quy trình như tính lương, tạo báo cáo, v
 
  +transferFunds(amount: double, account: String): Chuyển tiền cho một tài khoản cụ thể.
 
-* 6. Lớp PaymentProcessor
+* 6.Lớp PaymentProcessor
 -Mô tả: Lớp này xử lý các yêu cầu thanh toán từ hệ thống payroll.
 
 -Thuộc tính:
@@ -418,7 +418,7 @@ Lý do: Tự động hóa các quy trình như tính lương, tạo báo cáo, v
 
  +confirmPayment(): Xác nhận thanh toán.
 
-* 7. Lớp Report
+* 7.Lớp Report
 -Mô tả: Lớp này tạo các báo cáo liên quan đến thanh toán và lương.
 
 -Thuộc tính:
@@ -431,7 +431,7 @@ Lý do: Tự động hóa các quy trình như tính lương, tạo báo cáo, v
 
  +generateReport(): Tạo báo cáo.
 
-* 8. Lớp TimecardDatabase
+* 8.Lớp TimecardDatabase
 -Mô tả: Lớp này quản lý việc lưu trữ và truy xuất dữ liệu thẻ thời gian.
 
  -Thuộc tính:
