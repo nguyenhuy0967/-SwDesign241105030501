@@ -128,7 +128,7 @@ Lý do: Tự động hóa các quy trình như tính lương, tạo báo cáo, v
 
 **Giải thích các lớp phân tích:**
 
-  *Employee:
+  * Employee:
   
   -Thuộc tính:
   
@@ -144,7 +144,7 @@ Lý do: Tự động hóa các quy trình như tính lương, tạo báo cáo, v
   
   Ý nghĩa: Đại diện cho nhân viên trong hệ thống, là đối tượng chính cần quản lý thông tin và phương thức thanh toán.
   
-  *PaymentMethod:
+  * PaymentMethod:
   
   -Thuộc tính:
   
@@ -158,7 +158,7 @@ Lý do: Tự động hóa các quy trình như tính lương, tạo báo cáo, v
   
   Ý nghĩa: Quản lý các phương thức thanh toán khác nhau, giúp tăng tính linh hoạt cho hệ thống.
   
-  *Payroll:
+  * Payroll:
   
   -Thuộc tính:
   
@@ -176,7 +176,7 @@ Lý do: Tự động hóa các quy trình như tính lương, tạo báo cáo, v
   
   Ý nghĩa: Quản lý quá trình tính toán và xử lý lương, đảm bảo tính chính xác và hiệu quả.
   
-  *BankSystem:
+  * BankSystem:
   
   -Thuộc tính:
   
@@ -190,7 +190,7 @@ Lý do: Tự động hóa các quy trình như tính lương, tạo báo cáo, v
   
   Ý nghĩa: Tương tác với hệ thống ngân hàng để xử lý các giao dịch tài chính, đảm bảo an toàn và bảo mật.
   
-  *PaymentProcessor:
+  * PaymentProcessor:
   
   -Thuộc tính:
   
