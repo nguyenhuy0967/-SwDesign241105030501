@@ -109,4 +109,19 @@ Lý do: Tự động hóa các quy trình như tính lương, tạo báo cáo, v
 # 3. Phân tích ca sử dụng Payment
 ## Biểu đồ sequence mô tả hành vi của ca sử dụng "Payment" trong hệ thống payroll
 ![Diagram](https://www.planttext.com/api/plantuml/png/P91B2i8m48RtESNWIXTUe0ifXReB17A2a4unc1V9TD6pkV18Ni7qfLHdb_c-Vtx8w_6iCwb4WxDCQGe9MXTj617NPwFyNOwPq34MYsYqYSeJ73Rl02f3ksT2ZIbOEoFnXnnwuaYtq2q2tnlVnXatah4MpXSG5MIqg6btudXYOgQyWfY2nfnNFX4-eKPMG4dvt6Ew3hxBXJHo2-dWUvFSRwYqnMKbbglugMehy85CFwuPEUX9ABX6tqq_MUOD003__mC0).
+
 **Giải thích các bước trong biểu đồ sequence:**
+-Employee chọn phương thức thanh toán thông qua hệ thống Payroll.
+
+-Payroll gửi yêu cầu xử lý thanh toán đến PaymentMethod.
+
+-PaymentMethod tương tác với BankSystem để chuyển tiền.
+
+-BankSystem xác nhận giao dịch và gửi phản hồi lại cho PaymentMethod.
+
+-PaymentMethod thông báo cho Payroll rằng thanh toán đã được xử lý.
+
+-Payroll thông báo cho Employee rằng thanh toán đã thành công.
+
+## Biểu đồ lớp mô tả các lớp phân tích cho ca sử dụng "Payment" trong hệ thống payroll
+![Diagram](https://www.planttext.com/api/plantuml/png/V9DDJiCm48NtESKiMubS80jK8O740bHHBk0wqsBXdyYU82B4oLXm9Av0KZjkxAJDpc_6Cz-yZFz-VZUEcALMoO9BvXpSgqQQ3X6-2kY_4Z08ZtK5GbDGDLDOmOwiqCSWDQnJgEa9wStqkTlfyPG2u50YfoIoKalvwme-ZAYBxo9W9T78vk-cP5vxpla06ciuEXSghPWohQOAQjFk9Iurj4RAsAhnvxJNw4qLRGk1j7W0u4poLZB27PFCTgjr5iTFv2tX23X3kcFwVTSvGXMfzhsK8WtAml1acNO7j0-jhbqs-mqmphtWxrnoV-iTDFRiogYa455U815Qa63dCNEMg_iGZ3Jw8AowQDGBDiPIXBIdOqhejTUkoV6EgD7sUBx6j7Py6MLvcsttk2n396x2L9obJvPvY9z_RJ7p-dgxF3q9-Y6A3UfwUE7zzmy00F__0m00).
