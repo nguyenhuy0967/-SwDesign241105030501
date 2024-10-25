@@ -107,4 +107,6 @@ Lý do: Tự động hóa các quy trình như tính lương, tạo báo cáo, v
 Ý nghĩa: Giúp hệ thống hoạt động mượt mà và hiệu quả hơn.
 
 # 3. Phân tích ca sử dụng Payment
+## Biểu đồ sequence mô tả hành vi của ca sử dụng "Payment" trong hệ thống payroll
 ![Diagram](https://www.planttext.com/api/plantuml/png/P91B2i8m48RtESNWIXTUe0ifXReB17A2a4unc1V9TD6pkV18Ni7qfLHdb_c-Vtx8w_6iCwb4WxDCQGe9MXTj617NPwFyNOwPq34MYsYqYSeJ73Rl02f3ksT2ZIbOEoFnXnnwuaYtq2q2tnlVnXatah4MpXSG5MIqg6btudXYOgQyWfY2nfnNFX4-eKPMG4dvt6Ew3hxBXJHo2-dWUvFSRwYqnMKbbglugMehy85CFwuPEUX9ABX6tqq_MUOD003__mC0).
+**Giải thích các bước trong biểu đồ sequence:**
