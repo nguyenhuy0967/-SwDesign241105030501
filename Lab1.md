@@ -129,7 +129,7 @@ Lý do: Tự động hóa các quy trình như tính lương, tạo báo cáo, v
 **Giải thích các lớp phân tích:**
   *Employee:
   
-  *Thuộc tính:
+    Thuộc tính:
   
   employeeId: ID của nhân viên.
   
