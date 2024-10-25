@@ -128,7 +128,7 @@ Lý do: Tự động hóa các quy trình như tính lương, tạo báo cáo, v
 
 **Giải thích các lớp phân tích:**
 
-  Employee:
+  *Employee:
   
   -Thuộc tính:
   
@@ -144,78 +144,78 @@ Lý do: Tự động hóa các quy trình như tính lương, tạo báo cáo, v
   
   Ý nghĩa: Đại diện cho nhân viên trong hệ thống, là đối tượng chính cần quản lý thông tin và phương thức thanh toán.
   
-  PaymentMethod:
+  *PaymentMethod:
   
-  Thuộc tính:
+  -Thuộc tính:
   
-  methodId: ID của phương thức thanh toán.
+  +methodId: ID của phương thức thanh toán.
   
-  methodName: Tên của phương thức thanh toán.
+  +methodName: Tên của phương thức thanh toán.
   
-  Phương thức:
+  -Phương thức:
   
-  processPayment(amount: double): Xử lý thanh toán.
+  +processPayment(amount: double): Xử lý thanh toán.
   
   Ý nghĩa: Quản lý các phương thức thanh toán khác nhau, giúp tăng tính linh hoạt cho hệ thống.
   
-  Payroll:
+  *Payroll:
   
-  Thuộc tính:
+  -Thuộc tính:
   
-  payrollId: ID của bảng lương.
+  +payrollId: ID của bảng lương.
   
-  employee: Thông tin nhân viên.
+  +employee: Thông tin nhân viên.
   
-  amount: Số tiền lương.
+  +amount: Số tiền lương.
   
-  Phương thức:
+  -Phương thức:
   
-  calculateSalary(): Tính toán lương.
+  +calculateSalary(): Tính toán lương.
   
-  executePayment(): Thực hiện thanh toán.
+  +executePayment(): Thực hiện thanh toán.
   
   Ý nghĩa: Quản lý quá trình tính toán và xử lý lương, đảm bảo tính chính xác và hiệu quả.
   
-  BankSystem:
+  *BankSystem:
   
-  Thuộc tính:
+  -Thuộc tính:
   
-  bankId: ID của ngân hàng.
+  +bankId: ID của ngân hàng.
   
-  bankName: Tên của ngân hàng.
+  +bankName: Tên của ngân hàng.
   
-  Phương thức:
+  -Phương thức:
   
-  transferFunds(amount: double, account: String): Chuyển tiền.
+  +transferFunds(amount: double, account: String): Chuyển tiền.
   
   Ý nghĩa: Tương tác với hệ thống ngân hàng để xử lý các giao dịch tài chính, đảm bảo an toàn và bảo mật.
   
-  PaymentProcessor:
+  *PaymentProcessor:
   
-  Thuộc tính:
+  -Thuộc tính:
   
-  processorId: ID của bộ xử lý thanh toán.
+  +processorId: ID của bộ xử lý thanh toán.
   
-  processorName: Tên của bộ xử lý thanh toán.
+  +processorName: Tên của bộ xử lý thanh toán.
   
-  Phương thức:
+  -Phương thức:
   
-  initiatePayment(amount: double, method: PaymentMethod): Khởi tạo thanh toán.
+  +initiatePayment(amount: double, method: PaymentMethod): Khởi tạo thanh toán.
   
-  confirmPayment(): Xác nhận thanh toán.
+  +confirmPayment(): Xác nhận thanh toán.
   
   Ý nghĩa: Xử lý các yêu cầu thanh toán, đảm bảo quá trình thanh toán diễn ra suôn sẻ.
   
-  Report:
+ * Report:
   
-  Thuộc tính:
+  -Thuộc tính:
   
-  reportId: ID của báo cáo.
+  +reportId: ID của báo cáo.
   
-  reportType: Loại báo cáo.
+  +reportType: Loại báo cáo.
+
+  -Phương thức:
   
-  Phương thức:
-  
-  generateReport(): Tạo báo cáo.
+  +generateReport(): Tạo báo cáo.
   
   Ý nghĩa: Tạo các báo cáo liên quan đến thanh toán và lương, hỗ trợ quản trị viên trong việc ra quyết định.
