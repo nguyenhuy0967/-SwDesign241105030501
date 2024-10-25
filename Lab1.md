@@ -317,3 +317,132 @@ Lý do: Tự động hóa các quy trình như tính lương, tạo báo cáo, v
 
 ![Diagram](https://www.planttext.com/api/plantuml/png/Z5LBQkGm4Dtx55ewaBw02I64cO61cH3IWQohfKeYee-Hv2Pcc9DbaIFb2h5R7tVP3kbUDEZLvprLbSeVR-zNFe0BdLOLL-0z-wbRPNj4zgzYms_3C06_HSEa2GareB5Xs-2aUKfG2xr64_vYUBQ3x-tnCRa4gP634xvXVwGF5_VfV7cmC-PH8GyaijPh-SuQjhTIf30G8cUgCqN3CaHzkrP0m1FS_rUf8eIub2NAeaM9sCsyD8orpdBqFcMgGTlEX8O9s-qKBWYpaiALHLAszSQCjslOZ-4_0S-sS_x1kXSKcJ6fseEIetizADXPgn0CkRMpIXKDRJolIsZAs2G3lM7Yuw1ufmR2BIXm_KXBxFYAl0kOgqJxzeG67HoiNicsNbJj6ipBjlS1TT6y6o0gU4HM-XCS6F-8xbTdX9-rvvm1vn68CLyDo6riidLJpJ92HHHuHOaqCaYOYZ3NSi9huDOyIgVdPInoxx2rBXIHxd2a2YDstxTpURaBCSSoTnxTOVvW1txQ8Y81bEVRVG3xKvvgrXQAx-njd1yzYxCfVjHTzjrcSpdRMSHKOlB36C4ozSSWJN9iMSqndnvYZ7Mkw0eQ3TEqLulnMufOj8MeMRMMgrsX4UFduHC00F__0m00)
 
+*Tài liệu mô tả biểu đồ lớp phân tích cho 2 ca sử dụng Payment và Maintain Timecard của hệ thống Payroll trên :*
+
+* 1.Lớp Employee
+-Mô tả: Lớp này đại diện cho nhân viên trong hệ thống payroll. Nó chứa thông tin cá nhân của nhân viên và các phương thức để quản lý thẻ thời gian và phương thức thanh toán.
+
+ -Thuộc tính:
+
+ +employeeId: ID duy nhất của nhân viên.
+
+ +name: Tên của nhân viên.
+
+ +paymentMethod: Phương thức thanh toán mà nhân viên đã chọn.
+
+ +timecards: Danh sách các thẻ thời gian của nhân viên.
+
+ -Phương thức:
+
+ +selectPaymentMethod(method: PaymentMethod): Cho phép nhân viên chọn phương thức thanh toán.
+
+ +addTimecard(timecard: Timecard): Thêm thẻ thời gian mới cho nhân viên.
+
+ +updateTimecard(timecard: Timecard): Cập nhật thông tin thẻ thời gian của nhân viên.
+
+* 2. Lớp PaymentMethod
+     
+-Mô tả: Lớp này quản lý các phương thức thanh toán khác nhau mà nhân viên có thể chọn.
+
+-Thuộc tính:
+
+ +methodId: ID duy nhất của phương thức thanh toán.
+
+ +methodName: Tên của phương thức thanh toán.
+
+-Phương thức:
+
+ +processPayment(amount: double): Xử lý thanh toán cho một số tiền cụ thể.
+
+* 3. Lớp Timecard
+-Mô tả: Lớp này đại diện cho thẻ thời gian của nhân viên, chứa thông tin về thời gian làm việc của họ.
+
+-Thuộc tính:
+
+ +timecardId: ID duy nhất của thẻ thời gian.
+
+ +employeeId: ID của nhân viên liên quan đến thẻ thời gian.
+
+ +date: Ngày làm việc.
+
+ +hoursWorked: Số giờ làm việc.
+
+-Phương thức:
+
+ +validate(): Xác thực thông tin thẻ thời gian.
+
+* 4. Lớp Payroll
+-Mô tả: Lớp này quản lý quá trình tính toán và xử lý lương cho nhân viên.
+
+-Thuộc tính:
+
+ +payrollId: ID duy nhất của bảng lương.
+
+ +employee: Thông tin nhân viên liên quan đến bảng lương.
+
+ +amount: Số tiền lương.
+
+-Phương thức:
+
+ +calculateSalary(): Tính toán lương dựa trên thẻ thời gian.
+
+ +executePayment(): Thực hiện thanh toán lương.
+
+ +generatePayslip(): Tạo phiếu lương cho nhân viên.
+
+* 5. Lớp BankSystem
+-Mô tả: Lớp này tương tác với hệ thống ngân hàng để xử lý các giao dịch tài chính.
+
+-Thuộc tính:
+
+ +bankId: ID duy nhất của ngân hàng.
+
+ +bankName: Tên của ngân hàng.
+
+-Phương thức:
+
+ +transferFunds(amount: double, account: String): Chuyển tiền cho một tài khoản cụ thể.
+
+* 6. Lớp PaymentProcessor
+-Mô tả: Lớp này xử lý các yêu cầu thanh toán từ hệ thống payroll.
+
+-Thuộc tính:
+
+ +processorId: ID duy nhất của bộ xử lý thanh toán.
+
+ +processorName: Tên của bộ xử lý thanh toán.
+
+-Phương thức:
+
+ +initiatePayment(amount: double, method: PaymentMethod): Khởi tạo thanh toán.
+
+ +confirmPayment(): Xác nhận thanh toán.
+
+* 7. Lớp Report
+-Mô tả: Lớp này tạo các báo cáo liên quan đến thanh toán và lương.
+
+-Thuộc tính:
+
+ +reportId: ID duy nhất của báo cáo.
+
+ +reportType: Loại báo cáo.
+
+-Phương thức:
+
+ +generateReport(): Tạo báo cáo.
+
+* 8. Lớp TimecardDatabase
+-Mô tả: Lớp này quản lý việc lưu trữ và truy xuất dữ liệu thẻ thời gian.
+
+ -Thuộc tính:
+
+ +databaseId: ID duy nhất của cơ sở dữ liệu.
+
+ +timecards: Danh sách các thẻ thời gian.
+
+-Phương thức:
+
+ +saveTimecard(timecard: Timecard): Lưu thẻ thời gian vào cơ sở dữ liệu.
+
+ +getTimecard(employeeId: int, date: Date): Truy xuất thẻ thời gian của nhân viên theo ngày.
+
