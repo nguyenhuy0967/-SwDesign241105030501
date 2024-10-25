@@ -127,19 +127,20 @@ Lý do: Tự động hóa các quy trình như tính lương, tạo báo cáo, v
 ![Diagram](https://www.planttext.com/api/plantuml/png/V9DDJiCm48NtESKiMubS80jK8O740bHHBk0wqsBXdyYU82B4oLXm9Av0KZjkxAJDpc_6Cz-yZFz-VZUEcALMoO9BvXpSgqQQ3X6-2kY_4Z08ZtK5GbDGDLDOmOwiqCSWDQnJgEa9wStqkTlfyPG2u50YfoIoKalvwme-ZAYBxo9W9T78vk-cP5vxpla06ciuEXSghPWohQOAQjFk9Iurj4RAsAhnvxJNw4qLRGk1j7W0u4poLZB27PFCTgjr5iTFv2tX23X3kcFwVTSvGXMfzhsK8WtAml1acNO7j0-jhbqs-mqmphtWxrnoV-iTDFRiogYa455U815Qa63dCNEMg_iGZ3Jw8AowQDGBDiPIXBIdOqhejTUkoV6EgD7sUBx6j7Py6MLvcsttk2n396x2L9obJvPvY9z_RJ7p-dgxF3q9-Y6A3UfwUE7zzmy00F__0m00).
 
 **Giải thích các lớp phân tích:**
- Employee:
+
+  Employee:
   
-  Thuộc tính:
+  -Thuộc tính:
   
-  employeeId: ID của nhân viên.
+   +employeeId: ID của nhân viên.
   
-  name: Tên của nhân viên.
+   +name: Tên của nhân viên.
   
-  paymentMethod: Phương thức thanh toán của nhân viên.
+   +paymentMethod: Phương thức thanh toán của nhân viên.
   
-  Phương thức:
+  -Phương thức:
   
-  selectPaymentMethod(method: PaymentMethod): Chọn phương thức thanh toán.
+   +selectPaymentMethod(method: PaymentMethod): Chọn phương thức thanh toán.
   
   Ý nghĩa: Đại diện cho nhân viên trong hệ thống, là đối tượng chính cần quản lý thông tin và phương thức thanh toán.
   
