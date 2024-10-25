@@ -219,3 +219,101 @@ Lý do: Tự động hóa các quy trình như tính lương, tạo báo cáo, v
   +generateReport(): Tạo báo cáo.
   
   Ý nghĩa: Tạo các báo cáo liên quan đến thanh toán và lương, hỗ trợ quản trị viên trong việc ra quyết định.
+
+# Phân tích ca sử dụng Maintain Timecard
+##  Biểu đồ sequence mô tả hành vi của ca sử dụng "Maintain Timecard" trong hệ thống payroll
+![Diagram](https://www.planttext.com/api/plantuml/png/V8mn3i8m34LtdyBgr0vS80DYIFS8vG8c2LAafAaI5wbdO-18N04eoL09iLdlVR_d_N4gJ9cN680CfunZd4DQdGEOtzmRFzF4s3NS8HKSzqxHcbC8cr9xfNrqXhBTdFxj935Tg7pJMWACU3YY4aZMjatFzH3Oq03gizC2RnIy9NRz0Bg-LkJJT7Pb2TotjHHOwER-ThMi5PEcgyznwxm0003__mC0).
+
+*Giải thích các bước trong biểu đồ sequence:*
+
+-Employee gửi yêu cầu thêm thẻ thời gian mới thông qua hệ thống Payroll.
+
+-Payroll gửi yêu cầu xác thực thông tin thẻ thời gian đến Timecard.
+
+-Timecard trả về kết quả xác thực cho Payroll.
+
+-Payroll gửi yêu cầu lưu thẻ thời gian vào TimecardDatabase.
+
+-TimecardDatabase xác nhận việc lưu trữ và gửi phản hồi lại cho Payroll.
+
+-Payroll thông báo cho Employee rằng thẻ thời gian đã được lưu thành công.
+
+##  Biểu đồ lớp mô tả các lớp phân tích cho ca sử dụng "Maintain Timecard" trong hệ thống payroll
+![Diagram](https://www.planttext.com/api/plantuml/png/Z5FBQiCm4BpxA_QOGFq3eeGSsaEXXq82FQ-j9HLTIqOFWodziXxwIVs5ogqansbAeeD1CoFjxAprzV6vTHwj3nrNBQDpSD_rR4OYUAiWhXee0GzIWD8-eHex4h3pLkb3Whpgg4KhdO17vVpjFkqtFpm0IfcXLTOAoD1Qm62KJDhGI_HqXVozIhupKNpdCqlVvxkPYWcuYzy4l9XWtREnhnHrqeI6AJaRaDKaNqK7ZJ5Cg6SJJpXQmrmyzB_xynP4oJeHs9cW_Kcz5haD70lkaD6EKza5Vo1DDjAnj6FLh_uD9dQ73Rfvi381ItUNfkXmk6OksPmlsfFaRuv2Ny_d9z_b5wphpKpaR2Um17SC5kMVZY-pvS8jQJazXkeR003__mC0).
+
+*Giải thích các lớp phân tích:*
+* Employee:
+
+- Thuộc tính:
+
+ + employeeId: ID của nhân viên.
+
+  +name: Tên của nhân viên.
+
+  +timecards: Danh sách các thẻ thời gian của nhân viên.
+
+- Phương thức:
+
+  +addTimecard(timecard: Timecard): Thêm thẻ thời gian mới.
+
+  +updateTimecard(timecard: Timecard): Cập nhật thẻ thời gian.
+
+Ý nghĩa: Đại diện cho nhân viên trong hệ thống, là đối tượng chính cần quản lý thông tin và thẻ thời gian.
+
+* Timecard:
+
+ -Thuộc tính:
+
+  +timecardId: ID của thẻ thời gian.
+
+  +employeeId: ID của nhân viên.
+
+  +date: Ngày làm việc.
+
+  +hoursWorked: Số giờ làm việc.
+
+ -Phương thức:
+
+  +validate(): Xác thực thông tin thẻ thời gian.
+
+Ý nghĩa: Quản lý thông tin chi tiết về thời gian làm việc của nhân viên, giúp tính toán lương chính xác.
+
+* Payroll:
+
+ -Thuộc tính:
+
+  +payrollId: ID của bảng lương.
+
+  +employee: Thông tin nhân viên.
+
+  +amount: Số tiền lương.
+
+ -Phương thức:
+
+  +calculateSalary(): Tính toán lương dựa trên thẻ thời gian.
+
+  +generatePayslip(): Tạo phiếu lương.
+
+Ý nghĩa: Quản lý quá trình tính toán và xử lý lương, đảm bảo tính chính xác và hiệu quả.
+
+* TimecardDatabase:
+
+ -Thuộc tính:
+
+  +databaseId: ID của cơ sở dữ liệu.
+
+  +timecards: Danh sách các thẻ thời gian.
+
+ -Phương thức:
+
+  +saveTimecard(timecard: Timecard): Lưu thẻ thời gian vào cơ sở dữ liệu.
+
+  +getTimecard(employeeId: int, date: Date): Truy xuất thẻ thời gian của nhân viên theo ngày.
+
+Ý nghĩa: Quản lý việc lưu trữ và truy xuất dữ liệu thẻ thời gian, đảm bảo tính toàn vẹn và bảo mật của dữ liệu.
+
+# 5. Hợp nhất kết quả phân tích
+##  Biểu đồ lớp hợp nhất các lớp phân tích cho ca sử dụng "Payment" và "Maintain Timecard" trong hệ thống payroll
+
+![Diagram](https://www.planttext.com/api/plantuml/png/Z5LBQkGm4Dtx55ewaBw02I64cO61cH3IWQohfKeYee-Hv2Pcc9DbaIFb2h5R7tVP3kbUDEZLvprLbSeVR-zNFe0BdLOLL-0z-wbRPNj4zgzYms_3C06_HSEa2GareB5Xs-2aUKfG2xr64_vYUBQ3x-tnCRa4gP634xvXVwGF5_VfV7cmC-PH8GyaijPh-SuQjhTIf30G8cUgCqN3CaHzkrP0m1FS_rUf8eIub2NAeaM9sCsyD8orpdBqFcMgGTlEX8O9s-qKBWYpaiALHLAszSQCjslOZ-4_0S-sS_x1kXSKcJ6fseEIetizADXPgn0CkRMpIXKDRJolIsZAs2G3lM7Yuw1ufmR2BIXm_KXBxFYAl0kOgqJxzeG67HoiNicsNbJj6ipBjlS1TT6y6o0gU4HM-XCS6F-8xbTdX9-rvvm1vn68CLyDo6riidLJpJ92HHHuHOaqCaYOYZ3NSi9huDOyIgVdPInoxx2rBXIHxd2a2YDstxTpURaBCSSoTnxTOVvW1txQ8Y81bEVRVG3xKvvgrXQAx-njd1yzYxCfVjHTzjrcSpdRMSHKOlB36C4ozSSWJN9iMSqndnvYZ7Mkw0eQ3TEqLulnMufOj8MeMRMMgrsX4UFduHC00F__0m00)
+
