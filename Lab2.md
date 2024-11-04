@@ -30,7 +30,7 @@ EmployeeForm thông báo cho PayrollAdministrator rằng việc tạo nhân viê
 
 ![Diagram](https://www.planttext.com/api/plantuml/png/f9J1JiCm38RlVOeSos4lq0CQWY5nGziJU8qt8YLn5RkLAiIJSU2HU0MQaMvTsBHDzDJ-TktFoPzyVtxDMI18wsnHMs1Mhz07ilP1E-CDIm2XeDuBDJmp1L5zqPKoNfBamM6bLXACt-uafInjZI_lAjMHqKch0uBWmZMMUiGIqyiJ25HgCVaQV_ie4j0OVARW4eXIsd1ZeOzQreZRjJEo2rnkSbHiYTnQARcjQsIkr9h88lYpG8_a9IuLXZtMR_CfyTKG0QKDVWKTtignmj2P6lSGDo_rVm5YhJNmWO278jVrJwL7Sl8R4rnakAtxtg1ZimiUZObWRAOrR-Jpl8ROY26VoHgRuTGuz98562o4lb8RIo1fh0wiqSEMHD9oClGmoidJDflT7xc-E3e2q-Z1WiK9LqupaqcAt3JJd74VYpyRcsUT9zf5v-Xrl55-0000__y30000)
 Giải thích các lớp phân tích:
-PayrollAdministrator:
+*PayrollAdministrator:
 
 Thuộc tính:
 
@@ -46,7 +46,7 @@ createEmployee(employeeData: EmployeeData): Tạo nhân viên mới.
 
 Ý nghĩa: Đại diện cho người dùng (quản trị viên) có quyền tạo mới nhân viên trong hệ thống.
 
-EmployeeForm:
+*EmployeeForm:
 
 Phương thức:
 
@@ -58,7 +58,7 @@ displayResult(success: boolean): Hiển thị kết quả tạo nhân viên.
 
 Ý nghĩa: Quản lý giao diện người dùng cho chức năng tạo mới nhân viên.
 
-EmployeeController:
+*EmployeeController:
 
 Phương thức:
 
@@ -68,7 +68,7 @@ returnSaveResult(success: boolean): Trả về kết quả lưu trữ cho Employ
 
 Ý nghĩa: Điều khiển luồng dữ liệu giữa EmployeeForm và EmployeeService.
 
-EmployeeService:
+*EmployeeService:
 
 Phương thức:
 
@@ -78,7 +78,7 @@ returnSaveResult(success: boolean): Trả về kết quả lưu trữ cho Employ
 
 Ý nghĩa: Xử lý logic nghiệp vụ và tương tác với EmployeeDatabase để lưu trữ dữ liệu.
 
-EmployeeDatabase:
+*EmployeeDatabase:
 
 Phương thức:
 
@@ -88,7 +88,7 @@ confirmSave(success: boolean): Xác nhận việc lưu trữ.
 
 Ý nghĩa: Quản lý việc lưu trữ dữ liệu nhân viên trong cơ sở dữ liệu.
 
-EmployeeData:
+*EmployeeData:
 
 Thuộc tính:
 
