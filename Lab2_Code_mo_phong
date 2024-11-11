@@ -1,1 +1,156 @@
+// Code mô phỏng chức năng Maintion Timecard
+import java.util.ArrayList;
+import java.util.Scanner;
 
+// Lớp Timecard đại diện cho một bảng chấm công của nhân viên
+class Timecard {
+    private String employeeId;
+    private String date;
+    private double hoursWorked;
+
+    public Timecard(String employeeId, String date, double hoursWorked) {
+        this.employeeId = employeeId;
+        this.date = date;
+        this.hoursWorked = hoursWorked;
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public double getHoursWorked() {
+        return hoursWorked;
+    }
+
+    public void setHoursWorked(double hoursWorked) {
+        this.hoursWorked = hoursWorked;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee ID: " + employeeId + ", Date: " + date + ", Hours Worked: " + hoursWorked;
+    }
+}
+
+// Lớp ManageTimecard chứa các phương thức để quản lý bảng chấm công
+class ManageTimecard {
+    private ArrayList<Timecard> timecards = new ArrayList<>();
+    private Scanner scanner = new Scanner(System.in);
+
+    // Thêm bảng chấm công mới
+    public void addTimecard() {
+        System.out.print("Nhập mã nhân viên: ");
+        String employeeId = scanner.nextLine();
+
+        System.out.print("Nhập ngày (YYYY-MM-DD): ");
+        String date = scanner.nextLine();
+
+        System.out.print("Nhập số giờ làm việc: ");
+        double hoursWorked = scanner.nextDouble();
+        scanner.nextLine(); // Đọc bỏ dòng trống
+
+        Timecard timecard = new Timecard(employeeId, date, hoursWorked);
+        timecards.add(timecard);
+        System.out.println("Đã thêm bảng chấm công thành công.");
+    }
+
+    // Hiển thị tất cả bảng chấm công
+    public void displayTimecards() {
+        if (timecards.isEmpty()) {
+            System.out.println("Không có bảng chấm công nào.");
+            return;
+        }
+
+        System.out.println("Danh sách bảng chấm công:");
+        for (Timecard timecard : timecards) {
+            System.out.println(timecard);
+        }
+    }
+
+    // Chỉnh sửa bảng chấm công
+    public void editTimecard() {
+        System.out.print("Nhập mã nhân viên: ");
+        String employeeId = scanner.nextLine();
+
+        System.out.print("Nhập ngày (YYYY-MM-DD): ");
+        String date = scanner.nextLine();
+
+        for (Timecard timecard : timecards) {
+            if (timecard.getEmployeeId().equals(employeeId) && timecard.getDate().equals(date)) {
+                System.out.print("Nhập số giờ làm việc mới: ");
+                double newHoursWorked = scanner.nextDouble();
+                scanner.nextLine(); // Đọc bỏ dòng trống
+
+                timecard.setHoursWorked(newHoursWorked);
+                System.out.println("Đã cập nhật bảng chấm công.");
+                return;
+            }
+        }
+
+        System.out.println("Không tìm thấy bảng chấm công cần chỉnh sửa.");
+    }
+
+    // Xóa bảng chấm công
+    public void deleteTimecard() {
+        System.out.print("Nhập mã nhân viên: ");
+        String employeeId = scanner.nextLine();
+
+        System.out.print("Nhập ngày (YYYY-MM-DD): ");
+        String date = scanner.nextLine();
+
+        for (Timecard timecard : timecards) {
+            if (timecard.getEmployeeId().equals(employeeId) && timecard.getDate().equals(date)) {
+                timecards.remove(timecard);
+                System.out.println("Đã xóa bảng chấm công.");
+                return;
+            }
+        }
+
+        System.out.println("Không tìm thấy bảng chấm công cần xóa.");
+    }
+}
+
+// Lớp chính để chạy chương trình
+public class TimecardSystem {
+    public static void main(String[] args) {
+        ManageTimecard manageTimecard = new ManageTimecard();
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("\nChức năng Maintain Timecard:");
+            System.out.println("1. Thêm bảng chấm công");
+            System.out.println("2. Hiển thị bảng chấm công");
+            System.out.println("3. Chỉnh sửa bảng chấm công");
+            System.out.println("4. Xóa bảng chấm công");
+            System.out.println("5. Thoát");
+            System.out.print("Chọn chức năng: ");
+
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Đọc bỏ dòng trống
+
+            switch (choice) {
+                case 1:
+                    manageTimecard.addTimecard();
+                    break;
+                case 2:
+                    manageTimecard.displayTimecards();
+                    break;
+                case 3:
+                    manageTimecard.editTimecard();
+                    break;
+                case 4:
+                    manageTimecard.deleteTimecard();
+                    break;
+                case 5:
+                    System.out.println("Thoát chương trình.");
+                    return;
+                default:
+                    System.out.println("Lựa chọn không hợp lệ.");
+            }
+        }
+    }
+}
