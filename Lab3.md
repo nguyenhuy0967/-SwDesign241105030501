@@ -286,3 +286,123 @@ Persistence:
 
 Lớp này chứa cơ sở dữ liệu, nơi lưu trữ tất cả các thông tin cần thiết của hệ thống.
 
+# Áp dụng phương pháp xác định các phần tử thiết kế (Identify design elements) để xác định các phần tử thiết kế cho hệ thống "Payroll System".
+
+Để xác định các phần tử thiết kế cho hệ thống "Payroll System," chúng ta sẽ áp dụng phương pháp xác định các phần tử thiết kế. Chúng ta sẽ xem xét các lớp phân tích và ánh xạ chúng vào các phần tử thiết kế cụ thể. Dưới đây là các bước cụ thể:
+
+## 1. Xác định các lớp phân tích
+Dựa trên biểu đồ ca sử dụng (use-case diagram) và các yêu cầu hệ thống, chúng ta xác định các lớp phân tích chính:
+
+Employee
+
+Commissioned Employee
+
+Payroll Administrator
+
+System Clock
+
+Project Database
+
+Printer
+
+Bank System
+
+## 2. Ánh xạ các lớp phân tích đến các phần tử thiết kế
+Lớp Employee
+Design Element: Employee
+
+Owning Package: Business Services::Employee Management
+
+Lớp Commissioned Employee
+Design Element: CommissionedEmployee
+
+Owning Package: Business Services::Employee Management
+
+Lớp Payroll Administrator
+Design Element: PayrollAdministrator
+
+Owning Package: Business Services::Payroll Management
+
+Lớp System Clock
+Design Element: SystemClock
+
+Owning Package: Infrastructure::System Utilities
+
+Lớp Project Database
+Design Element: ProjectDatabase
+
+Owning Package: Data Services::Database Management
+
+Lớp Printer
+Design Element: Printer
+
+Owning Package: Infrastructure::Peripheral Devices
+
+Lớp Bank System
+Design Element: BankSystem
+
+Owning Package: External Systems::Financial Services
+
+## 3. Tạo bảng ánh xạ các lớp phân tích đến các phần tử thiết kế
+
+![image](https://github.com/user-attachments/assets/89fa6bfa-d0c7-44f9-8f62-0b0b8b415f8d)
+
+## 4. Mô tả các phần tử thiết kế
+   
+Employee: Lớp này quản lý thông tin nhân viên, bao gồm tên, mã số nhân viên, và các thông tin liên quan đến lương.
+
+CommissionedEmployee: Lớp này mở rộng từ lớp Employee, quản lý thông tin nhân viên hưởng lương hoa hồng.
+
+PayrollAdministrator: Lớp này quản lý các tác vụ liên quan đến xử lý bảng lương, như thêm, sửa, xóa thông tin bảng lương.
+
+SystemClock: Lớp này cung cấp chức năng đồng hồ hệ thống để tính toán thời gian và quản lý các nhiệm vụ liên quan đến thời gian.
+
+ProjectDatabase: Lớp này quản lý kết nối và truy xuất dữ liệu từ cơ sở dữ liệu dự án.
+
+Printer: Lớp này quản lý các tác vụ liên quan đến in ấn, như in báo cáo và phiếu lương.
+
+BankSystem: Lớp này quản lý các kết nối và giao dịch với hệ thống ngân hàng để thực hiện việc chuyển khoản lương.
+
+## 5. Gộp nhóm các phần tử thiết kế
+
+Dựa trên các phần tử thiết kế đã xác định, chúng ta sẽ gộp nhóm chúng vào các gói:
+
+![image](https://github.com/user-attachments/assets/f28972f2-6295-46b5-b40b-4a7f809f248f)
+
+## 6. Kiến trúc phân tầng
+
+Dựa trên các nhóm phần tử thiết kế, chúng ta sẽ tạo ra kiến trúc phân tầng kết hợp với các hệ thống con BankSystem, PrintService, ProjectManagementDatabase subsystems:
+
+![Diagram](https://www.planttext.com/api/plantuml/png/f5HBQiCm4Dtx58CEa0EK4EActRKGo0ccyj2griTeb80fELaNFLAlKDbEucyCfbfe8RtVZ0RzVlziEQ0FHwEJ0cMExmHYZwLtMiEXv416m5S2STLRY_74P0C6vIoyO4d-YgkMrCWC5vqqCyeg3Xw3ypNadFJ5qgBGIivgFPj2kv9eSBnpnYZcIAJi3gIfOgUTp2VD3-HFIjBY8ZeGxpv9XYSC-8Oyz7z4cpSPHZHbmyLzMl4LROneOfzxsiCAgaj8fQJ8l5V5RCHbTdlo73j1TgPf_xAxJPkOQhw0rMe3ulhQ0XvWlJuoyMRJaDgR6ZWr8Wr9sG_oAjo8CswT8HeRpl06ZLZ4RGTdeMKxLXF4OQ1kpF6Bz0JEoPPiLdqLVm000F__0m00)
+
+ Giải thích các layers và hệ thống con:
+ 
+Presentation Layer:
+
+Chứa các phần tử tương tác với người dùng, chẳng hạn như PayrollAdministrator.
+
+Application Layer:
+
+Chứa logic ứng dụng và các phần tử xử lý nghiệp vụ, chẳng hạn như Employee, CommissionedEmployee, và SystemClock.
+
+Service Layer:
+
+Chứa các dịch vụ kinh doanh và logic nghiệp vụ của hệ thống, bao gồm các hệ thống con như PayrollAdministrator, ProjectDatabase, BankSystem, PrintService, và ProjectManagementDatabase.
+
+Data Access Layer:
+
+Chứa các phần tử truy cập dữ liệu, chẳng hạn như ProjectDatabase và ProjectManagementDatabase.
+
+Persistence Layer:
+
+Chứa các phần tử quản lý cơ sở dữ liệu, chẳng hạn như ProjectDatabase và ProjectManagementDatabase.
+
+* Quan hệ giữa các phần tử:
+
+PayrollAdministrator sử dụng Employee, SystemClock, ProjectDatabase, BankSystem, và PrintService.
+
+Employee kế thừa từ CommissionedEmployee.
+
+PayrollAdministrator sử dụng ProjectDatabase.
+
+ProjectDatabase sử dụng ProjectManagementDatabase.
