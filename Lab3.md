@@ -1,7 +1,10 @@
 # Hệ thống con BankSystem 
 ## Biểu đồ ngữ cảnh của hệ thống con BankSystem.
+
 ![Diagram](https://www.planttext.com/api/plantuml/png/h94zQWCn48NxESNWoeROE6qmYt4gTm6VGDQEYR1-5irio69yiXGvKguGQN-CO5jNceVUlFSX_VtyxbbKbDPPq5OnuuVgOh3sFNZ99qNSxL0F2giARu0OMp_QbYku0nWl52zA4nuFobzF7GkvtbbJ4zZ8Cjdr9-ahDkFmWjbvz9SGdH8JF9v7tISEB4LOWk3sp8DeOlZkCennZIL7NlZ9pO-jr9lYZUIwWgfO1vW_sMAxsRmkSBskfh74UyFQHD8oCJBsNOnVHW6KpXmmeSmkPXnxydNwo7y0003__mC0)
+
 ### Mô tả hệ thống con, interface của hệ thống con
+
 Các hệ thống con và giao diện
 
 1. Hệ thống con PayrollController:
@@ -56,12 +59,17 @@ Các lớp Paycheck và BankInformation: Cung cấp dữ liệu cần thiết ch
 
 ## Analysis class to design element map
 Ánh xạ các lớp phân tích đến các phần tử thiết kế.
+
 ![image](https://github.com/user-attachments/assets/0c419952-9f25-48e1-8027-16cbb84f7a42)
+
 ## Design element to owning package map
+
  Ánh xạ các phần tử thiết kế vào các gói.
+ 
 ![image](https://github.com/user-attachments/assets/aa6b5314-8039-4a35-b079-0b521b45427a)
 ## Architectural layers and their dependencies
 Biểu đồ mô tả các layers trong hệ thống và quan hệ giữa chúng :
+
 ![Diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3bT1Od9sOdggWf9JObvsS6LnIMgkaa8rbm8GHDlOv2HMfXRPsIau5XJaP2OdbcJcvyMYopcL5cVcfHONAmId5fLb9gSMOwXmIIn9L71C1afXbqjAB4w5IE2pLq5FpuuqUp5Le9j1o6KmEMpw8AwkvN98pKi1XIG0003__mC0)
 
 ### Giải thích các layers:
@@ -83,8 +91,11 @@ Lớp này chứa cơ sở dữ liệu, nơi lưu trữ tất cả các thông t
 
 # Hệ thống con PrintService
 ## Biểu đồ ngữ cảnh của hệ thống con PrintService
-![Diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3bToJc9niK90KMPUYND-NabHVavEQf52DPS24EZhAnIdvgKePEKdAPJaAnI056beSjLoSG4PgKLfYScf2fvWhS6fHMMPG1v47rYXItvoQMugK4CAb66b01C26u5aCTcwOK9SNEWUq4t9By_JjKDpdXNOFyKGAq3UAbOeoqpaGbLaKwEdX-8kD7bTeB5mYt7BE01j0WKm0000__y30000))
+
+![Diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3bToJc9niK90KMPUYND-NabHVavEQf52DPS24EZhAnIdvgKePEKdAPJaAnI056beSjLoSG4PgKLfYScf2fvWhS6fHMMPG1v47rYXItvoQMugK4CAb66b01C26u5aCTcwOK9SNEWUq4t9By_JjKDpdXNOFyKGAq3UAbOeoqpaGbLaKwEdX-8kD7bTeB5mYt7BE01j0WKm0000__y30000)
+
 ### Mô tả hệ thống con, interface của hệ thống con
+
 PrintController:
 
 Lớp này chịu trách nhiệm gửi các công việc in đến dịch vụ in.
@@ -110,15 +121,19 @@ Cả IPrintService và PrintService đều có quan hệ với đối tượng D
 Send Print Job (Gửi công việc in): Hệ thống bên ngoài có thể tương tác với PrintService để gửi công việc in.
 
 ## Analysis class to design element map
+
 Ánh xạ các lớp phân tích đến các phần tử thiết kế.
 
 ![image](https://github.com/user-attachments/assets/c56f4d9c-c802-450d-aa70-d87aa499bbcc)
+
 ## Design element to owning package map
+
  Ánh xạ các phần tử thiết kế vào các gói.
  
 ![image](https://github.com/user-attachments/assets/9e5fa9b4-6b20-47e8-bb1e-1719e0c37c3f)
 
 ## Architectural layers and their dependencies
+
 Biểu đồ mô tả các layers trong hệ thống và quan hệ giữa chúng :
 
 ![Diagram]( https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3bT1Od9sOdggWb90KMPUIN1gKLbcSggIGZMN0X14szZa95Qc5jdPAGGKfHQdvfKabcJcvyMYIpeM5EHa9eFb57poqpEJCLH03SOGTqaiILHmJ4vEBIx6a0j8BIhEB2v9pOFfm-ic1LrTEzBSXAa2tGnSheQ9ewl7vnjaENHzA3wjvN98pKi1nGq0003__mC0)
@@ -147,7 +162,9 @@ Lớp này chứa cơ sở dữ liệu, nơi lưu trữ tất cả các thông t
 
 # Hệ thống con ProjectManagementDatabase subsystems
 ## Biểu đồ ngữ cảnh của hệ thống con ProjectManagementDatabase subsystems
+
 ![Diagram](https://www.planttext.com/api/plantuml/png/x9J1IiD048RlUOgX9mNRteD8GIyz24AVODniuzhDRBlP14HxzZ6aIF4a8dWoY8U0xv4dy1NCjXjjiKdhtJriDfFvlvaTVlAPlVTYWzeaaVJYaQ0nQenWZ6o48H-OAyb1SsQGGiazpyMXTQRLPHa-HIfV8qxc10sUOynRSEr1kPZ4E8PVQSUAZ5PISktoxEfsOP8Kh_S4Cdy3biyO6BkbHJO7LcGF246HFKC-euLcwYqUWWpNGsGS-gvErSI0wrIKyPyI60GkPm_TmQ-wEx0aLMbzg4vz6YeTeH6Azhz1caSgvGsieLRHZgna7A1fOWdQWUIciJRm_q4uwRhBp4N-GY4OGHiDjLHkuDTIsCSCuYAxixWdaAB8RfDLOfF_s-sZMkFwblfegVEoqYH120Kg26o1PSjroiERJgV61Oqwsutxj3LlmuHMRxiD_KVorEjn2kp_wGi00F__0m00)
+
 ### Mô tả hệ thống con, interface của hệ thống con ProjectManagementDatabase
 
 * Hệ thống con ProjectManagementDatabase chịu trách nhiệm quản lý và lưu trữ thông tin liên quan đến các dự án trong một tổ chức. Hệ thống này bao gồm các chức năng chính sau:
